@@ -8,9 +8,11 @@
 This repository contains the project page for **"Do We Need Perfect Data? Leveraging Noise for Domain Generalized Segmentation"**.
 
 ## Acknowledgement
-The website template is adapted from  
-**Nerfies: Deformable Neural Radiance Fields**  
-https://github.com/nerfies/nerfies.github.io
+Parts of this project page were adopted from the Nerfies page.
+
+## Website License
+Creative Commons License
+This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
 
 
 
