@@ -369,15 +369,15 @@
             <strong>Diffusion-based generation improves domain generalization—but remains imperfect at boundaries.</strong>
           </p>
           <ul>
-            <li>Unlike real datasets where masks are derived from images, <strong>diffusion methods generate images from masks</strong>. This reversed process creates spatial misalignment between images and semantic masks.</li>
-            <li><strong>Boundary regions</strong> consistently exhibit higher error rates than interior regions, with the gap becoming even larger under adverse conditions (fog, snow, rain, nighttime).</li>
-            <li>Adverse conditions naturally produce <strong>blurred boundaries</strong> and reduced visibility, making precise object delineation especially challenging.</li>
-            <li>Existing boundary-aware methods assume perfect spatial correspondence—an assumption that breaks down with synthetic data.</li>
+            <li><strong>Reversed Generation Process:</strong> Unlike real datasets where masks are derived from images, diffusion methods <em>generate images from masks</em>. This reversed process inherently creates spatial misalignment between synthesized images and their semantic annotations.</li>
+            <li><strong>Boundary Error Amplification:</strong> Boundary regions consistently exhibit <em>higher error rates</em> than interior regions, with the gap becoming even more pronounced under adverse conditions (fog, snow, rain, nighttime).</li>
+            <li><strong>Adverse Condition Challenge:</strong> Poor visibility conditions naturally produce <em>blurred boundaries</em> and reduced contrast, making precise object delineation especially difficult for segmentation models.</li>
+            <li><strong>Assumption Breakdown:</strong> Existing boundary-aware methods assume <em>perfect spatial correspondence</em> between images and masks—an assumption that fundamentally breaks down with synthetic data.</li>
           </ul>
           
           <div style="background-color: #e8e8e8; padding: 1rem 1.5rem; border-left: 4px solid #363636; margin-top: 1.5rem;">
-            <p style="margin-bottom: 0.5rem;"><strong>Key Insight:</strong> Both issues stem from the same root cause—<em>boundary uncertainty</em>—producing unreliable supervision at the most critical regions for segmentation.</p>
-            <p style="margin-bottom: 0;"><strong>Our Question:</strong> Can we <em>leverage</em> this noise instead of fighting it?</p>
+            <p style="margin-bottom: 0.5rem;">💡 <strong>Key Insight:</strong> Both issues stem from the same root cause—<em>boundary uncertainty</em>—producing unreliable supervision at the most critical regions for segmentation.</p>
+            <p style="margin-bottom: 0;">🔍 <strong>Our Question:</strong> Can we <em>leverage</em> this noise instead of fighting it?</p>
           </div>
         </div>
       </div>
