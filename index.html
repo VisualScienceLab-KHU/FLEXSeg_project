@@ -400,45 +400,45 @@
             We tested four boundary handling strategies by adjusting the weight <em>W(x,y)</em> at boundary pixels in the loss function:
           </p>
           
-          <!-- 이미지와 표 나란히 배치 -->
-          <div class="columns is-vcentered" style="margin: 1.5rem 0;">
-            <!-- 이미지 -->
-            <div class="column is-7">
-              <img src="static/images/motivation.png" alt="Boundary Handling Strategies"
-                style="width: 100%; height: auto;">
-            </div>
-            <!-- 표 -->
-            <div class="column is-5">
-              <div style="text-align: center; margin-bottom: 1rem; font-size: 1rem;">
-                <em>ℒ = Σ<sub>(x,y)</sub> W(x,y) · ℒ<sub>CE</sub>(x,y)</em>
-              </div>
-              <table class="table is-bordered is-fullwidth" style="font-size: 0.9rem;">
-                <thead>
-                  <tr>
-                    <th style="text-align: center;">Strategy</th>
-                    <th style="text-align: center;"><em>W(x,y)</em> at boundary</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Ignore</td>
-                    <td style="text-align: center;">0</td>
-                  </tr>
-                  <tr>
-                    <td>Reduce</td>
-                    <td style="text-align: center;"><em>α</em> &lt; 1</td>
-                  </tr>
-                  <tr>
-                    <td>Threshold</td>
-                    <td style="text-align: center;">min(<em>τ, ℒ</em>)</td>
-                  </tr>
-                  <tr style="background-color: #f0f7e6;">
-                    <td><strong>Enhance</strong></td>
-                    <td style="text-align: center;"><strong><em>α</em> &gt; 1</strong></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+          <!-- 수식 -->
+          <div style="text-align: center; margin: 1.5rem 0; font-size: 1.1rem;">
+            <em>ℒ = Σ<sub>(x,y)</sub> W(x,y) · ℒ<sub>CE</sub>(x,y)</em>
+          </div>
+          
+          <!-- 표 -->
+          <div style="display: flex; justify-content: center; margin: 1.5rem 0;">
+            <table class="table is-bordered" style="font-size: 0.95rem; width: auto;">
+              <thead>
+                <tr>
+                  <th style="text-align: center;">Strategy</th>
+                  <th style="text-align: center;"><em>W(x,y)</em> at boundary</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Ignore</td>
+                  <td style="text-align: center;">0</td>
+                </tr>
+                <tr>
+                  <td>Reduce</td>
+                  <td style="text-align: center;"><em>α</em> &lt; 1</td>
+                </tr>
+                <tr>
+                  <td>Threshold</td>
+                  <td style="text-align: center;">min(<em>τ, ℒ</em>)</td>
+                </tr>
+                <tr style="background-color: #f0f7e6;">
+                  <td><strong>Enhance</strong></td>
+                  <td style="text-align: center;"><strong><em>α</em> &gt; 1</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- 이미지 -->
+          <div style="display: flex; justify-content: center; margin: 1.5rem 0;">
+            <img src="static/images/motivation.png" alt="Boundary Handling Strategies"
+              style="width: 80%; height: auto; max-width: 900px;">
           </div>
 
           <ul>
