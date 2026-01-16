@@ -299,22 +299,6 @@
     </section>
 
 
-<!-- Teaser video-->
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <!-- Teaser video placeholder -->
-      <video poster="static/images/carousel1.jpg" id="tree" autoplay controls muted loop height="100%" preload="metadata">
-        <source src="static/videos/banner_video.mp4" type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        FLEX-Seg reframes diffusion-generated mask-image misalignment as a learning signal and focuses on boundary precision through GAP, UBE, and HAS.
-      </h2>
-    </div>
-  </div>
-</section>
-<!-- End teaser video -->
-
 <!-- Paper abstract -->
 <section class="section hero is-light">
   <div class="container is-max-desktop">
@@ -323,7 +307,20 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Domain generalization in semantic segmentation faces challenges from domain shifts, particularly under adverse conditions. While diffusion-based data generation methods show promise, they introduce inherent misalignment between generated images and semantic masks. This paper presents FLEX-Seg (FLexible Edge eXploitation for Segmentation), a framework that transforms this limitation into an opportunity for robust learning. FLEX-Seg comprises three key components: (1) Granular Adaptive Prototypes that capture boundary characteristics across multiple scales, (2) Uncertainty Boundary Emphasis that dynamically adjusts learning emphasis based on prediction entropy, and (3) Hardness-Aware Sampling that progressively focuses on challenging examples. By leveraging inherent misalignment rather than enforcing strict alignment, FLEX-Seg learns robust representations while capturing rich stylistic variations. Experiments across five real-world datasets demonstrate consistent improvements over state-of-the-art methods, achieving 2.44% and 2.63% mIoU gains on ACDC and Dark Zurich. Our findings validate that adaptive strategies for handling imperfect synthetic data lead to superior domain generalization.
+            Domain generalization in semantic segmentation faces challenges from domain shifts, 
+            particularly under adverse conditions. 
+            While diffusion-based data generation methods show promise, they introduce inherent misalignment 
+            between generated images and semantic masks. 
+            This paper presents FLEX-Seg (FLexible Edge eXploitation for Segmentation), a framework that transforms this limitation 
+            into an opportunity for robust learning. 
+            FLEX-Seg comprises three key components: (1) Granular Adaptive Prototypes that capture boundary characteristics across multiple scales, 
+            (2) Uncertainty Boundary Emphasis that dynamically adjusts learning emphasis based on prediction entropy, 
+            and (3) Hardness-Aware Sampling that progressively focuses on challenging examples. 
+            By leveraging inherent misalignment rather than enforcing strict alignment, FLEX-Seg learns robust representations 
+            while capturing rich stylistic variations. 
+            Experiments across five real-world datasets demonstrate consistent improvements over state-of-the-art methods, 
+            achieving 2.44% and 2.63% mIoU gains on ACDC and Dark Zurich. 
+            Our findings validate that adaptive strategies for handling imperfect synthetic data lead to superior domain generalization.
           </p>
         </div>
       </div>
@@ -331,6 +328,44 @@
   </div>
 </section>
 <!-- End paper abstract -->
+
+<!-- Introduction Section -->
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+
+        <div class="column is-ll">
+          <h2 class="title is-2 has-text-weight-semibold"
+            style="font-size:2.2rem;border-bottom: 3px solid #bca74b; padding-bottom: 0.4rem; margin-bottom: 1rem;">🔍 Do We Need Perfect Data?</h2>
+
+          <!-- 이미지 따로 분리 -->
+          <div class="image-wrapper" style="display: flex; justify-content: center; gap: 2rem; margin-bottom: 1.5rem;">
+            <img src="static/images/misalignment.png" alt="Misalignment Example"
+              style="width: 45%; height: auto; max-width: 500px;">
+            <img src="static/images/error_rate.png" alt="Boundary vs Interior Error Rate"
+              style="width: 45%; height: auto; max-width: 500px;">
+          </div>
+
+          <!-- 본문 -->
+          <div class="content" style="font-size:1.3rem; color:#222; line-height:1.8;">
+            <p><strong>🔍 Diffusion-based generation improves domain generalization—but remains imperfect at boundaries.</strong></p>
+            <ul style="list-style-type:none; padding-left:0; text-align:left;">
+              <li>🔄 Unlike real datasets where masks are derived from images, <strong>diffusion methods generate images from masks</strong>. This reversed process creates <em>spatial misalignment</em> between images and semantic masks.</li>
+              <li>⚠️ <strong>Boundary regions</strong> consistently exhibit higher error rates than interior regions, with the gap becoming even larger under <em>adverse conditions</em> (fog, snow, rain, nighttime).</li>
+              <li>🌫️ Adverse conditions naturally produce <strong>blurred boundaries</strong> and reduced visibility, making precise object delineation especially challenging.</li>
+              <li>🤔 Existing boundary-aware methods assume <em>perfect spatial correspondence</em>—an assumption that breaks down with synthetic data.</li>
+            </ul>
+            <div style="margin-left:1.5rem; margin-top:0.5rem; background-color:#f9f9f9; padding:1rem; border-left:4px solid #bca74b;">
+              <p>💡 <strong>Key Insight:</strong> Both issues stem from the same root cause—<em>boundary uncertainty</em>—producing unreliable supervision at the most critical regions for segmentation.</p>
+              <p>🚀 <strong>Our Question:</strong> Can we <em>leverage</em> this noise instead of fighting it?</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- Key contributions -->
 <section class="section">
