@@ -337,7 +337,7 @@
 
         <div class="column is-ll">
           <h2 class="title is-2 has-text-weight-semibold"
-            style="font-size:2.2rem;border-bottom: 3px solid #bca74b; padding-bottom: 0.4rem; margin-bottom: 1rem;">🔍 Do We Need Perfect Data?</h2>
+            style="font-size:2.2rem;border-bottom: 3px solid #bca74b; padding-bottom: 0.4rem; margin-bottom: 1rem;">🔍 Key Observations</h2>
 
           <!-- 이미지 따로 분리 -->
           <div class="image-wrapper" style="display: flex; justify-content: center; gap: 2rem; margin-bottom: 1.5rem;">
@@ -359,6 +359,42 @@
             <div style="margin-left:1.5rem; margin-top:0.5rem; background-color:#f9f9f9; padding:1rem; border-left:4px solid #bca74b;">
               <p>💡 <strong>Key Insight:</strong> Both issues stem from the same root cause—<em>boundary uncertainty</em>—producing unreliable supervision at the most critical regions for segmentation.</p>
               <p>🚀 <strong>Our Question:</strong> Can we <em>leverage</em> this noise instead of fighting it?</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Motivation Section -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+
+        <div class="column is-ll">
+          <h2 class="title is-2 has-text-weight-semibold"
+            style="font-size:2.2rem;border-bottom: 3px solid #bca74b; padding-bottom: 0.4rem; margin-bottom: 1rem;">💡 Motivation</h2>
+
+          <!-- 이미지 -->
+          <div class="image-wrapper" style="display: flex; justify-content: center; margin-bottom: 1.5rem;">
+            <img src="static/images/motivation.png" alt="Boundary Handling Strategies"
+              style="width: 80%; height: auto; max-width: 900px;">
+          </div>
+
+          <!-- 본문 -->
+          <div class="content" style="font-size:1.3rem; color:#222; line-height:1.8;">
+            <p><strong>💡 How should we handle noisy boundary regions?</strong></p>
+            <ul style="list-style-type:none; padding-left:0; text-align:left;">
+              <li>🧪 We tested <strong>four boundary handling strategies</strong>: Ignore, Reduce, Threshold, and Enhance.</li>
+              <li>✅ The <strong>Enhance</strong> strategy consistently improved performance across all domains.</li>
+              <li>📊 By maintaining <em>high entropy at uncertain boundaries</em> while keeping <em>low entropy in clear interiors</em>, the model makes confident predictions where cues are clear, yet remains appropriately uncertain at challenging regions.</li>
+              <li>❌ Traditional approaches that ignore or reduce boundary weights fail to capture the rich stylistic variations present in synthetic data.</li>
+            </ul>
+            <div style="margin-left:1.5rem; margin-top:0.5rem; background-color:#f9f9f9; padding:1rem; border-left:4px solid #bca74b;">
+              <p>🚀 <strong>Key Insight:</strong> Adaptive boundary emphasis with <em>uncertainty-aware learning</em> leads to robust domain generalization.</p>
+              <p>🔄 <strong>Our Approach:</strong> Rather than enforcing strict alignment, we <em>leverage</em> inherent misalignment to learn more robust and transferable representations.</p>
             </div>
           </div>
         </div>
