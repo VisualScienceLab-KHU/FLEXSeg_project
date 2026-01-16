@@ -116,66 +116,50 @@
   {
     "@context": "https://schema.org",
     "@type": "ScholarlyArticle",
-    "headline": "Do We Need Perfect Data? Leveraging Noise for Domain Generalized Segmentation",
-    "description": "FLEX-Seg turns diffusion mask-image misalignment into robust DG segmentation via boundary prototypes, uncertainty weighting, and hardness-aware sampling.",
+    "headline": "PAPER_TITLE",
+    "description": "BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS",
     "author": [
       {
         "@type": "Person",
-        "name": "Taeyeong Kim",
+        "name": "FIRST_AUTHOR_NAME",
         "affiliation": {
           "@type": "Organization",
-          "name": "Kyung Hee University"
+          "name": "INSTITUTION_NAME"
         }
       },
       {
         "@type": "Person",
-        "name": "SeungJoon Lee",
+        "name": "SECOND_AUTHOR_NAME",
         "affiliation": {
           "@type": "Organization",
-          "name": "Kyung Hee University"
-        }
-      },
-      {
-        "@type": "Person",
-        "name": "Jung Uk Kim",
-        "affiliation": {
-          "@type": "Organization",
-          "name": "Kyung Hee University"
-        }
-      },
-      {
-        "@type": "Person",
-        "name": "MyeongAh Cho",
-        "affiliation": {
-          "@type": "Organization",
-          "name": "Kyung Hee University"
+          "name": "INSTITUTION_NAME"
         }
       }
     ],
-    "datePublished": "2025-11-28",
+    "datePublished": "2024-01-01",
     "publisher": {
       "@type": "Organization",
-      "name": "arXiv"
+      "name": "CONFERENCE_OR_JOURNAL_NAME"
     },
-    "url": "https://arxiv.org/abs/2511.22948",
-    "image": "static/images/carousel1.jpg",
-    "keywords": ["domain generalization", "semantic segmentation", "diffusion", "boundary learning", "uncertainty", "hardness-aware sampling", "autonomous driving", "adverse conditions"],
-    "abstract": "Domain generalization in semantic segmentation faces challenges from domain shifts, particularly under adverse conditions. While diffusion-based data generation methods show promise, they introduce inherent misalignment between generated images and semantic masks. This paper presents FLEX-Seg (FLexible Edge eXploitation for Segmentation), a framework that transforms this limitation into an opportunity for robust learning. FLEX-Seg comprises three key components: (1) Granular Adaptive Prototypes that capture boundary characteristics across multiple scales, (2) Uncertainty Boundary Emphasis that dynamically adjusts learning emphasis based on prediction entropy, and (3) Hardness-Aware Sampling that progressively focuses on challenging examples. By leveraging inherent misalignment rather than enforcing strict alignment, FLEX-Seg learns robust representations while capturing rich stylistic variations. Experiments across five real-world datasets demonstrate consistent improvements over state-of-the-art methods, achieving 2.44% and 2.63% mIoU gains on ACDC and Dark Zurich. Our findings validate that adaptive strategies for handling imperfect synthetic data lead to superior domain generalization.",
-    "citation": "@misc{Kim2025FLEXSeg,\\n  title={Do We Need Perfect Data? Leveraging Noise for Domain Generalized Segmentation},\\n  author={Taeyeong Kim and SeungJoon Lee and Jung Uk Kim and MyeongAh Cho},\\n  year={2025},\\n  eprint={2511.22948},\\n  archivePrefix={arXiv},\\n  primaryClass={cs.CV},\\n  url={https://arxiv.org/abs/2511.22948}\\n}",
+    "url": "https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE",
+    "image": "https://YOUR_DOMAIN.com/static/images/social_preview.png",
+    "keywords": ["KEYWORD1", "KEYWORD2", "KEYWORD3", "machine learning", "computer vision"],
+    "abstract": "FULL_ABSTRACT_TEXT_HERE",
+    "citation": "BIBTEX_CITATION_HERE",
     "isAccessibleForFree": true,
     "license": "https://creativecommons.org/licenses/by/4.0/",
     "mainEntity": {
       "@type": "WebPage",
-      "@id": "https://arxiv.org/abs/2511.22948"
+      "@id": "https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE"
     },
     "about": [
       {
         "@type": "Thing",
-        "name": "Domain Generalized Semantic Segmentation"
+        "name": "RESEARCH_AREA_1"
       },
       {
         "@type": "Thing", 
-        "name": "Diffusion-based Synthetic Data"
+        "name": "RESEARCH_AREA_2"
       }
     ]
   }
@@ -186,15 +170,17 @@
   {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "Kyung Hee University",
-    "url": "https://www.khu.ac.kr/",
-    "logo": "static/images/favicon.ico",
+    "name": "INSTITUTION_OR_LAB_NAME",
+    "url": "https://YOUR_INSTITUTION_WEBSITE.com",
+    "logo": "https://YOUR_DOMAIN.com/static/images/favicon.ico",
     "sameAs": [
-      "https://github.com/VisualScienceLab-KHU"
+      "https://twitter.com/YOUR_TWITTER_HANDLE",
+      "https://github.com/YOUR_GITHUB_USERNAME"
     ]
   }
   </script>
 </head>
+
 <body>
 
 
@@ -218,25 +204,18 @@
         </button>
       </div>
       <div class="works-list">
-        <a href="https://arxiv.org/search/?query=DGInStyle&searchtype=all" class="work-item" target="_blank">
+        <a href="https://arxiv.org/abs/2312.03048l" class="work-item" target="_blank">
           <div class="work-info">
-            <h5>DGInStyle (Jia et al. 2024)</h5>
+            <h5>DGInStyle: Domain-Generalizable Semantic Segmentation with Image Diffusion Models and Stylized Semantic Control</h5>
             <p>Diffusion-based style transfer for domain generalized semantic segmentation.</p>
             <span class="work-venue">Baseline in FLEX-Seg experiments</span>
           </div>
           <i class="fas fa-external-link-alt"></i>
         </a>
-        <a href="https://arxiv.org/search/?query=DAFormer&searchtype=all" class="work-item" target="_blank">
+
+        <a href="https://arxiv.org/abs/2204.13132" class="work-item" target="_blank">
           <div class="work-info">
-            <h5>DAFormer (Hoyer et al. 2022)</h5>
-            <p>Transformer-based segmentation backbone used for domain adaptation and DGSS.</p>
-            <span class="work-venue">Backbone used with FLEX-Seg</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-        <a href="https://arxiv.org/search/?query=HRDA&searchtype=all" class="work-item" target="_blank">
-          <div class="work-info">
-            <h5>HRDA (Hoyer et al. 2023)</h5>
+            <h5>HRDA: Context-Aware High-Resolution Domain-Adaptive Semantic Segmentation</h5>
             <p>High-resolution domain adaptation with strong segmentation performance.</p>
             <span class="work-venue">Strong baseline and backbone</span>
           </div>
@@ -252,7 +231,8 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Do We Need Perfect Data? Leveraging Noise for Domain Generalized Segmentation</h1>
+            <h1 class="title is-1 publication-title">Do We Need Perfect Data?<br> 
+              Leveraging Noise for Domain Generalized Segmentation (a.k.a FLEX-Seg)</h1>
             <div class="is-size-5 publication-authors">
               <span class="author-block">
                 <a href="https://arxiv.org/search/?searchtype=author&query=Taeyeong+Kim" target="_blank">Taeyeong Kim</a>,
