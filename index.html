@@ -349,37 +349,35 @@
 </section>
 <!-- End key contributions -->
 
-<!-- Introduction Section -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
+<!-- Key Observations Section -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Key Observations</h2>
+        
+        <!-- 이미지 -->
+        <div style="display: flex; justify-content: center; gap: 2rem; margin-bottom: 1.5rem;">
+          <img src="static/images/misalignment.png" alt="Misalignment Example"
+            style="width: 45%; height: auto; max-width: 500px;">
+          <img src="static/images/error_rate.png" alt="Boundary vs Interior Error Rate"
+            style="width: 45%; height: auto; max-width: 500px;">
+        </div>
 
-        <div class="column is-ll">
-          <h2 class="title is-2 has-text-weight-semibold"
-            style="font-size:2.2rem;border-bottom: 3px solid #bca74b; padding-bottom: 0.4rem; margin-bottom: 1rem;">🔍 Key Observations</h2>
-
-          <!-- 이미지 따로 분리 -->
-          <div class="image-wrapper" style="display: flex; justify-content: center; gap: 2rem; margin-bottom: 1.5rem;">
-            <img src="static/images/misalignment.png" alt="Misalignment Example"
-              style="width: 45%; height: auto; max-width: 500px;">
-            <img src="static/images/error_rate.png" alt="Boundary vs Interior Error Rate"
-              style="width: 45%; height: auto; max-width: 500px;">
-          </div>
-
-          <!-- 본문 -->
-          <div class="content" style="font-size:1.3rem; color:#222; line-height:1.8;">
-            <p><strong>🔍 Diffusion-based generation improves domain generalization—but remains imperfect at boundaries.</strong></p>
-            <ul style="list-style-type:none; padding-left:0; text-align:left;">
-              <li>🔄 Unlike real datasets where masks are derived from images, <strong>diffusion methods generate images from masks</strong>. This reversed process creates <em>spatial misalignment</em> between images and semantic masks.</li>
-              <li>⚠️ <strong>Boundary regions</strong> consistently exhibit higher error rates than interior regions, with the gap becoming even larger under <em>adverse conditions</em> (fog, snow, rain, nighttime).</li>
-              <li>🌫️ Adverse conditions naturally produce <strong>blurred boundaries</strong> and reduced visibility, making precise object delineation especially challenging.</li>
-              <li>🤔 Existing boundary-aware methods assume <em>perfect spatial correspondence</em>—an assumption that breaks down with synthetic data.</li>
-            </ul>
-            <div style="margin-left:1.5rem; margin-top:0.5rem; background-color:#f9f9f9; padding:1rem; border-left:4px solid #bca74b;">
-              <p>💡 <strong>Key Insight:</strong> Both issues stem from the same root cause—<em>boundary uncertainty</em>—producing unreliable supervision at the most critical regions for segmentation.</p>
-              <p>🚀 <strong>Our Question:</strong> Can we <em>leverage</em> this noise instead of fighting it?</p>
-            </div>
+        <div class="content has-text-justified">
+          <p>
+            <strong>Diffusion-based generation improves domain generalization—but remains imperfect at boundaries.</strong>
+          </p>
+          <ul>
+            <li>Unlike real datasets where masks are derived from images, <strong>diffusion methods generate images from masks</strong>. This reversed process creates spatial misalignment between images and semantic masks.</li>
+            <li><strong>Boundary regions</strong> consistently exhibit higher error rates than interior regions, with the gap becoming even larger under adverse conditions (fog, snow, rain, nighttime).</li>
+            <li>Adverse conditions naturally produce <strong>blurred boundaries</strong> and reduced visibility, making precise object delineation especially challenging.</li>
+            <li>Existing boundary-aware methods assume perfect spatial correspondence—an assumption that breaks down with synthetic data.</li>
+          </ul>
+          
+          <div style="background-color:#f5f5f5; padding:1rem 1.5rem; border-left:4px solid #bca74b; margin-top:1.5rem;">
+            <p style="margin-bottom:0.5rem;"><strong>💡 Key Insight:</strong> Both issues stem from the same root cause—<em>boundary uncertainty</em>—producing unreliable supervision at the most critical regions for segmentation.</p>
+            <p style="margin-bottom:0;"><strong>🔍 Our Question:</strong> Can we <em>leverage</em> this noise instead of fighting it?</p>
           </div>
         </div>
       </div>
@@ -388,34 +386,32 @@
 </section>
 
 <!-- Motivation Section -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Motivation</h2>
+        
+        <!-- 이미지 -->
+        <div style="display: flex; justify-content: center; margin-bottom: 1.5rem;">
+          <img src="static/images/motivation.png" alt="Boundary Handling Strategies"
+            style="width: 80%; height: auto; max-width: 900px;">
+        </div>
 
-        <div class="column is-ll">
-          <h2 class="title is-2 has-text-weight-semibold"
-            style="font-size:2.2rem;border-bottom: 3px solid #bca74b; padding-bottom: 0.4rem; margin-bottom: 1rem;">💡 Motivation</h2>
-
-          <!-- 이미지 -->
-          <div class="image-wrapper" style="display: flex; justify-content: center; margin-bottom: 1.5rem;">
-            <img src="static/images/motivation.png" alt="Boundary Handling Strategies"
-              style="width: 80%; height: auto; max-width: 900px;">
-          </div>
-
-          <!-- 본문 -->
-          <div class="content" style="font-size:1.3rem; color:#222; line-height:1.8;">
-            <p><strong>💡 How should we handle noisy boundary regions?</strong></p>
-            <ul style="list-style-type:none; padding-left:0; text-align:left;">
-              <li>🧪 We tested <strong>four boundary handling strategies</strong>: Ignore, Reduce, Threshold, and Enhance.</li>
-              <li>✅ The <strong>Enhance</strong> strategy consistently improved performance across all domains.</li>
-              <li>📊 By maintaining <em>high entropy at uncertain boundaries</em> while keeping <em>low entropy in clear interiors</em>, the model makes confident predictions where cues are clear, yet remains appropriately uncertain at challenging regions.</li>
-              <li>❌ Traditional approaches that ignore or reduce boundary weights fail to capture the rich stylistic variations present in synthetic data.</li>
-            </ul>
-            <div style="margin-left:1.5rem; margin-top:0.5rem; background-color:#f9f9f9; padding:1rem; border-left:4px solid #bca74b;">
-              <p>🚀 <strong>Key Insight:</strong> Adaptive boundary emphasis with <em>uncertainty-aware learning</em> leads to robust domain generalization.</p>
-              <p>🔄 <strong>Our Approach:</strong> Rather than enforcing strict alignment, we <em>leverage</em> inherent misalignment to learn more robust and transferable representations.</p>
-            </div>
+        <div class="content has-text-justified">
+          <p>
+            <strong>How should we handle noisy boundary regions?</strong>
+          </p>
+          <ul>
+            <li>We tested <strong>four boundary handling strategies</strong>: Ignore, Reduce, Threshold, and Enhance.</li>
+            <li>The <strong>Enhance</strong> strategy consistently improved performance across all domains.</li>
+            <li>By maintaining high entropy at uncertain boundaries while keeping low entropy in clear interiors, the model makes confident predictions where cues are clear, yet remains appropriately uncertain at challenging regions.</li>
+            <li>Traditional approaches that ignore or reduce boundary weights fail to capture the rich stylistic variations present in synthetic data.</li>
+          </ul>
+          
+          <div style="background-color:#f5f5f5; padding:1rem 1.5rem; border-left:4px solid #bca74b; margin-top:1.5rem;">
+            <p style="margin-bottom:0.5rem;"><strong>💡 Key Insight:</strong> Adaptive boundary emphasis with <em>uncertainty-aware learning</em> leads to robust domain generalization.</p>
+            <p style="margin-bottom:0;"><strong>🚀 Our Approach:</strong> Rather than enforcing strict alignment, we <em>leverage</em> inherent misalignment to learn more robust and transferable representations.</p>
           </div>
         </div>
       </div>
@@ -424,68 +420,58 @@
 </section>
 
 <!-- Method Section -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Method: FLEX-Seg Framework</h2>
+        
+        <!-- 전체 프레임워크 이미지 -->
+        <div style="display: flex; justify-content: center; margin-bottom: 0.5rem;">
+          <img src="static/images/framework.png" alt="FLEX-Seg Framework Overview"
+            style="width: 100%; height: auto; max-width: 1000px;">
+        </div>
+        <p class="is-size-7 has-text-grey" style="margin-bottom:2rem;">Overview of the FLEX-Seg framework integrating three key components for robust domain generalization.</p>
 
-        <div class="column is-ll">
-          <h2 class="title is-2 has-text-weight-semibold"
-            style="font-size:2.2rem;border-bottom: 3px solid #bca74b; padding-bottom: 0.4rem; margin-bottom: 1rem;">Method: FLEX-Seg Framework</h2>
+        <div class="content has-text-justified">
+          <p>
+            Our framework transforms inherent misalignment in synthetic data into an opportunity for robust domain generalization through three synergistic components.
+          </p>
 
-          <!-- 전체 프레임워크 이미지 -->
-          <div class="image-wrapper" style="display: flex; justify-content: center; margin-bottom: 1rem;">
-            <img src="static/images/framework.png" alt="FLEX-Seg Framework Overview"
-              style="width: 100%; height: auto; max-width: 1100px;">
+          <!-- Component 1: GAP -->
+          <h4 style="border-left:4px solid #bca74b; padding-left:0.8rem; margin-top:1.5rem;">1. Granular Adaptive Prototypes (GAP)</h4>
+          
+          <!-- GAP 이미지 -->
+          <div style="display: flex; justify-content: center; margin:1rem 0;">
+            <img src="static/images/gap_module.png" alt="Granular Adaptive Prototypes"
+              style="width: 90%; height: auto; max-width: 800px;">
           </div>
-          <p style="font-size:1rem; color:#666; margin-bottom:2rem;">Overview of the FLEX-Seg framework integrating three key components for robust domain generalization.</p>
+          
+          <p>GAP addresses domain-invariant boundary representation learning through a novel two-dimensional coordinate system. Boundary pixels exhibit both geometric variations (thickness) and stylistic variations (environmental conditions), which we decompose into orthogonal dimensions.</p>
+          <ul>
+            <li><strong>Multi-granular extraction:</strong> Generates three boundary masks (thin, medium, thick) through morphological operations to capture scale variability.</li>
+            <li><strong>Prototype bank:</strong> Constructs a structured memory of C × 3 × 256 prototypes organized by semantic class and boundary granularity.</li>
+            <li><strong>Contrastive learning:</strong> Aligns boundary features with matching class-granularity prototypes while separating from others, with imbalance-aware weighting.</li>
+          </ul>
 
-          <!-- 본문 -->
-          <div class="content" style="font-size:1.25rem; color:#222; line-height:1.8; text-align:left;">
-            
-            <p>Our framework transforms inherent misalignment in synthetic data into an opportunity for robust domain generalization through three synergistic components.</p>
+          <!-- Component 2: UBE -->
+          <h4 style="border-left:4px solid #bca74b; padding-left:0.8rem; margin-top:2rem;">2. Uncertainty Boundary Emphasis (UBE)</h4>
+          <p>UBE dynamically emphasizes challenging boundary regions by leveraging prediction uncertainty, eliminating the need for manual hyperparameter tuning across diverse domains.</p>
+          <ul>
+            <li><strong>Entropy-based weighting:</strong> Computes prediction entropy as an uncertainty indicator, where higher values correspond to ambiguous boundary regions.</li>
+            <li><strong>Adaptive emphasis:</strong> Amplifies loss contribution for uncertain pixels while maintaining standard gradients for confident predictions.</li>
+            <li><strong>Automatic adaptation:</strong> Naturally handles varying difficulty levels where adverse conditions present more uncertain boundary predictions.</li>
+          </ul>
 
-            <!-- Component 1: GAP -->
-            <div style="margin-bottom:2rem;">
-              <h3 style="color:#333; border-left:4px solid #bca74b; padding-left:0.8rem; margin-bottom:1rem;">1. Granular Adaptive Prototypes (GAP)</h3>
-              
-              <!-- GAP 이미지 -->
-              <div class="image-wrapper" style="display: flex; justify-content: center; margin-bottom: 1rem;">
-                <img src="static/images/gap_module.png" alt="Granular Adaptive Prototypes"
-                  style="width: 85%; height: auto; max-width: 800px;">
-              </div>
-              
-              <p>GAP addresses domain-invariant boundary representation learning through a novel two-dimensional coordinate system. Boundary pixels exhibit both geometric variations (thickness) and stylistic variations (environmental conditions), which we decompose into orthogonal dimensions.</p>
-              <ul>
-                <li><strong>Multi-granular extraction:</strong> Generates three boundary masks (thin, medium, thick) through morphological operations to capture scale variability.</li>
-                <li><strong>Prototype bank:</strong> Constructs a structured memory of C × 3 × 256 prototypes organized by semantic class and boundary granularity.</li>
-                <li><strong>Contrastive learning:</strong> Aligns boundary features with matching class-granularity prototypes while separating from others, with imbalance-aware weighting.</li>
-              </ul>
-            </div>
+          <!-- Component 3: HAS -->
+          <h4 style="border-left:4px solid #bca74b; padding-left:0.8rem; margin-top:2rem;">3. Hardness-Aware Sampling (HAS)</h4>
+          <p>HAS optimizes training efficiency by progressively focusing on challenging examples through an adaptive threshold mechanism.</p>
+          <ul>
+            <li><strong>Hardness scoring:</strong> Maintains a hardness score for each training image, updated periodically using exponential moving average.</li>
+            <li><strong>Sigmoid decay scheduling:</strong> Gradually transitions from random to loss-based sampling as training progresses.</li>
+            <li><strong>Progressive focus:</strong> Ensures training stability in early stages while directing attention toward complex structures and adverse conditions later.</li>
+          </ul>
 
-            <!-- Component 2: UBE -->
-            <div style="margin-bottom:2rem;">
-              <h3 style="color:#333; border-left:4px solid #bca74b; padding-left:0.8rem; margin-bottom:1rem;">2. Uncertainty Boundary Emphasis (UBE)</h3>
-              <p>UBE dynamically emphasizes challenging boundary regions by leveraging prediction uncertainty, eliminating the need for manual hyperparameter tuning across diverse domains.</p>
-              <ul>
-                <li><strong>Entropy-based weighting:</strong> Computes prediction entropy as an uncertainty indicator, where higher values correspond to ambiguous boundary regions.</li>
-                <li><strong>Adaptive emphasis:</strong> Amplifies loss contribution for uncertain pixels while maintaining standard gradients for confident predictions.</li>
-                <li><strong>Automatic adaptation:</strong> Naturally handles varying difficulty levels where adverse conditions present more uncertain boundary predictions.</li>
-              </ul>
-            </div>
-
-            <!-- Component 3: HAS -->
-            <div style="margin-bottom:1.5rem;">
-              <h3 style="color:#333; border-left:4px solid #bca74b; padding-left:0.8rem; margin-bottom:1rem;">3. Hardness-Aware Sampling (HAS)</h3>
-              <p>HAS optimizes training efficiency by progressively focusing on challenging examples through an adaptive threshold mechanism.</p>
-              <ul>
-                <li><strong>Hardness scoring:</strong> Maintains a hardness score for each training image, updated periodically using exponential moving average.</li>
-                <li><strong>Sigmoid decay scheduling:</strong> Gradually transitions from random to loss-based sampling as training progresses.</li>
-                <li><strong>Progressive focus:</strong> Ensures training stability in early stages while directing attention toward complex structures and adverse conditions later.</li>
-              </ul>
-            </div>
-
-          </div>
         </div>
       </div>
     </div>
