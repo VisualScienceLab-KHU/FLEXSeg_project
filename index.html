@@ -337,10 +337,10 @@
         <h2 class="title is-3">Key Contributions</h2>
         <div class="content has-text-justified">
           <ul>
-            <li>Reframe diffusion mask-image misalignment as a useful signal for domain generalized segmentation instead of enforcing strict alignment.</li>
-            <li>Granular Adaptive Prototypes (GAP) learn boundary representations across multiple thickness levels and semantic classes.</li>
-            <li>Uncertainty Boundary Emphasis (UBE) scales supervision using prediction entropy to focus on uncertain boundary pixels.</li>
-            <li>Hardness-Aware Sampling (HAS) shifts from random to loss-based sampling to prioritize challenging examples.</li>
+            <li><strong>New Perspective on Synthetic Data:</strong> We reframe the inherent misalignment between diffusion-generated images and semantic masks as a <em>useful learning signal</em> rather than a limitation to be corrected.</li>
+            <li><strong>Granular Adaptive Prototypes (GAP):</strong> A prototype-based contrastive learning module that captures boundary representations across <em>multiple thickness levels</em> (thin, medium, thick) and semantic classes, enabling domain-invariant boundary learning.</li>
+            <li><strong>Uncertainty Boundary Emphasis (UBE):</strong> An entropy-based dynamic weighting mechanism that <em>automatically amplifies supervision</em> on uncertain boundary pixels without manual hyperparameter tuning.</li>
+            <li><strong>Hardness-Aware Sampling (HAS):</strong> A curriculum-style sampling strategy that <em>progressively shifts</em> from random to loss-based sampling, focusing training on challenging examples with complex structures or adverse conditions.</li>
           </ul>
         </div>
       </div>
