@@ -369,15 +369,15 @@
             <strong>Diffusion-based generation improves domain generalization—but remains imperfect at boundaries.</strong>
           </p>
           <ul>
-            <li><strong>Reversed Generation Process:</strong> Unlike real datasets where masks are derived from images, diffusion methods <mark style="background: linear-gradient(transparent 60%, #ffe066 60%);">generate images from masks</mark>. This reversed process inherently creates spatial misalignment between synthesized images and their semantic annotations.</li>
-            <li><strong>Boundary Error Amplification:</strong> Boundary regions consistently exhibit <mark style="background: linear-gradient(transparent 60%, #ffe066 60%);">higher error rates</mark> than interior regions, with the gap becoming even more pronounced under adverse conditions (fog, snow, rain, nighttime).</li>
-            <li><strong>Adverse Condition Challenge:</strong> Poor visibility conditions naturally produce <mark style="background: linear-gradient(transparent 60%, #ffe066 60%);">blurred boundaries</mark> and reduced contrast, making precise object delineation especially difficult for segmentation models.</li>
-            <li><strong>Assumption Breakdown:</strong> Existing boundary-aware methods assume <mark style="background: linear-gradient(transparent 60%, #ffe066 60%);">perfect spatial correspondence</mark> between images and masks—an assumption that fundamentally breaks down with synthetic data.</li>
+            <li>Unlike real datasets where masks are derived from images, diffusion methods <strong>generate images from masks</strong>. This reversed process inherently creates spatial misalignment between synthesized images and their semantic annotations.</li>
+            <li>Boundary regions consistently exhibit <strong>higher error rates</strong> than interior regions, with the gap becoming even more pronounced under adverse conditions (fog, snow, rain, nighttime).</li>
+            <li>Poor visibility conditions naturally produce blurred boundaries and reduced contrast, making precise object delineation especially difficult.</li>
+            <li>Existing boundary-aware methods assume perfect spatial correspondence—an assumption that breaks down with synthetic data.</li>
           </ul>
           
           <div style="background-color: #e8e8e8; padding: 1rem 1.5rem; border-left: 4px solid #363636; margin-top: 1.5rem;">
-            <p style="margin-bottom: 0.5rem;">💡 <strong>Key Insight:</strong> Both issues stem from the same root cause—<mark style="background: linear-gradient(transparent 60%, #ffe066 60%);">boundary uncertainty</mark>—producing unreliable supervision at the most critical regions for segmentation.</p>
-            <p style="margin-bottom: 0;">🔍 <strong>Our Question:</strong> Can we <mark style="background: linear-gradient(transparent 60%, #ffe066 60%);">leverage</mark> this noise instead of fighting it?</p>
+            <p style="margin-bottom: 0.5rem;">💡 <strong>Key Insight:</strong> Both issues stem from the same root cause—<strong>boundary uncertainty</strong>—producing unreliable supervision at the most critical regions for segmentation.</p>
+            <p style="margin-bottom: 0;">🔍 <strong>Our Question:</strong> Can we leverage this noise instead of fighting it?</p>
           </div>
         </div>
       </div>
