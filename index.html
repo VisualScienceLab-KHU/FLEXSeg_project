@@ -329,6 +329,26 @@
 </section>
 <!-- End paper abstract -->
 
+<!-- Key contributions -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Key Contributions</h2>
+        <div class="content has-text-justified">
+          <ul>
+            <li>Reframe diffusion mask-image misalignment as a useful signal for domain generalized segmentation instead of enforcing strict alignment.</li>
+            <li>Granular Adaptive Prototypes (GAP) learn boundary representations across multiple thickness levels and semantic classes.</li>
+            <li>Uncertainty Boundary Emphasis (UBE) scales supervision using prediction entropy to focus on uncertain boundary pixels.</li>
+            <li>Hardness-Aware Sampling (HAS) shifts from random to loss-based sampling to prioritize challenging examples.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End key contributions -->
+
 <!-- Introduction Section -->
 <section class="hero is-small is-light">
   <div class="hero-body">
@@ -403,47 +423,79 @@
   </div>
 </section>
 
-<!-- Key contributions -->
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Key Contributions</h2>
-        <div class="content has-text-justified">
-          <ul>
-            <li>Reframe diffusion mask-image misalignment as a useful signal for domain generalized segmentation instead of enforcing strict alignment.</li>
-            <li>Granular Adaptive Prototypes (GAP) learn boundary representations across multiple thickness levels and semantic classes.</li>
-            <li>Uncertainty Boundary Emphasis (UBE) scales supervision using prediction entropy to focus on uncertain boundary pixels.</li>
-            <li>Hardness-Aware Sampling (HAS) shifts from random to loss-based sampling to prioritize challenging examples.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End key contributions -->
+<!-- Method Section -->
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
 
-<!-- Datasets -->
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Datasets</h2>
-        <div class="content has-text-justified">
-          <ul>
-            <li>Source: GTA (24,966 synthetic images with 19 classes).</li>
-            <li>Targets: Cityscapes (500 validation images), BDD100K (1,000 images), and Mapillary Vistas (2,000 images).</li>
-            <li>Adverse-condition targets: ACDC (406 images across fog, night, rain, and snow) and Dark Zurich (nighttime driving).</li>
-          </ul>
+        <div class="column is-ll">
+          <h2 class="title is-2 has-text-weight-semibold"
+            style="font-size:2.2rem;border-bottom: 3px solid #bca74b; padding-bottom: 0.4rem; margin-bottom: 1rem;">Method: FLEX-Seg Framework</h2>
+
+          <!-- 전체 프레임워크 이미지 -->
+          <div class="image-wrapper" style="display: flex; justify-content: center; margin-bottom: 1rem;">
+            <img src="static/images/framework.png" alt="FLEX-Seg Framework Overview"
+              style="width: 100%; height: auto; max-width: 1100px;">
+          </div>
+          <p style="font-size:1rem; color:#666; margin-bottom:2rem;">Overview of the FLEX-Seg framework integrating three key components for robust domain generalization.</p>
+
+          <!-- 본문 -->
+          <div class="content" style="font-size:1.25rem; color:#222; line-height:1.8; text-align:left;">
+            
+            <p>Our framework transforms inherent misalignment in synthetic data into an opportunity for robust domain generalization through three synergistic components.</p>
+
+            <!-- Component 1: GAP -->
+            <div style="margin-bottom:2rem;">
+              <h3 style="color:#333; border-left:4px solid #bca74b; padding-left:0.8rem; margin-bottom:1rem;">1. Granular Adaptive Prototypes (GAP)</h3>
+              
+              <!-- GAP 이미지 -->
+              <div class="image-wrapper" style="display: flex; justify-content: center; margin-bottom: 1rem;">
+                <img src="static/images/gap_module.png" alt="Granular Adaptive Prototypes"
+                  style="width: 85%; height: auto; max-width: 800px;">
+              </div>
+              
+              <p>GAP addresses domain-invariant boundary representation learning through a novel two-dimensional coordinate system. Boundary pixels exhibit both geometric variations (thickness) and stylistic variations (environmental conditions), which we decompose into orthogonal dimensions.</p>
+              <ul>
+                <li><strong>Multi-granular extraction:</strong> Generates three boundary masks (thin, medium, thick) through morphological operations to capture scale variability.</li>
+                <li><strong>Prototype bank:</strong> Constructs a structured memory of C × 3 × 256 prototypes organized by semantic class and boundary granularity.</li>
+                <li><strong>Contrastive learning:</strong> Aligns boundary features with matching class-granularity prototypes while separating from others, with imbalance-aware weighting.</li>
+              </ul>
+            </div>
+
+            <!-- Component 2: UBE -->
+            <div style="margin-bottom:2rem;">
+              <h3 style="color:#333; border-left:4px solid #bca74b; padding-left:0.8rem; margin-bottom:1rem;">2. Uncertainty Boundary Emphasis (UBE)</h3>
+              <p>UBE dynamically emphasizes challenging boundary regions by leveraging prediction uncertainty, eliminating the need for manual hyperparameter tuning across diverse domains.</p>
+              <ul>
+                <li><strong>Entropy-based weighting:</strong> Computes prediction entropy as an uncertainty indicator, where higher values correspond to ambiguous boundary regions.</li>
+                <li><strong>Adaptive emphasis:</strong> Amplifies loss contribution for uncertain pixels while maintaining standard gradients for confident predictions.</li>
+                <li><strong>Automatic adaptation:</strong> Naturally handles varying difficulty levels where adverse conditions present more uncertain boundary predictions.</li>
+              </ul>
+            </div>
+
+            <!-- Component 3: HAS -->
+            <div style="margin-bottom:1.5rem;">
+              <h3 style="color:#333; border-left:4px solid #bca74b; padding-left:0.8rem; margin-bottom:1rem;">3. Hardness-Aware Sampling (HAS)</h3>
+              <p>HAS optimizes training efficiency by progressively focusing on challenging examples through an adaptive threshold mechanism.</p>
+              <ul>
+                <li><strong>Hardness scoring:</strong> Maintains a hardness score for each training image, updated periodically using exponential moving average.</li>
+                <li><strong>Sigmoid decay scheduling:</strong> Gradually transitions from random to loss-based sampling as training progresses.</li>
+                <li><strong>Progressive focus:</strong> Ensures training stability in early stages while directing attention toward complex structures and adverse conditions later.</li>
+              </ul>
+            </div>
+
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
-<!-- End datasets -->
+
 
 
 <!-- Image carousel -->
+<h2 class="title is-2 has-text-weight-semibold has-text-centered" style="font-size:2.2rem; border-bottom:3px solid #bca74b; padding-bottom:0.4rem; margin:0 auto 1.5rem auto; width:30%;">Experimental Results Visualization</h2>
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
@@ -535,62 +587,6 @@
 </section>
 <!-- End results highlights -->
 
-
-<!-- Video carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Qualitative Results (Placeholders)</h2>
-      <p class="content has-text-justified">Replace these clips with qualitative comparisons that emphasize boundary improvements on ACDC and Dark Zurich.</p>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <!-- Placeholder poster image for preview -->
-          <video poster="static/images/carousel1.jpg" id="video1" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video2">
-          <!-- Placeholder poster image for preview -->
-          <video poster="static/images/carousel2.jpg" id="video2" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video3">
-          <!-- Placeholder poster image for preview -->
-          <video poster="static/images/carousel3.jpg" id="video3" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End video carousel -->
-
-
-
-
-
-
-<!-- Paper PDF -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Paper PDF</h2>
-
-      <iframe src="https://arxiv.org/pdf/2511.22948v1" width="100%" height="550">
-          </iframe>
-        
-      </div>
-    </div>
-  </section>
-<!--End paper PDF -->
-
-
-
 <!--BibTex citation -->
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
@@ -622,9 +618,13 @@
         <div class="content">
 
           <p>
-            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template"
+              target="_blank">Academic Project Page Template</a> which was adopted from the <a
+              href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the source code of this website, we just ask that you link back to this page in
+            the footer. <br> This website is licensed under a <a rel="license"
+              href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+              Commons Attribution-ShareAlike 4.0 International License</a>.
           </p>
 
         </div>
